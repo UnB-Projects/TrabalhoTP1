@@ -5,10 +5,6 @@ void Email::setEmail(string email) throw (invalid_argument) {
 	this->email = email;
 }
 
-string Email::getEmail() {
-	return this->email;
-}
-
 void Email::valida(string email) throw (invalid_argument) {
 	int i = 0;
 	string usuario, provedor, extensao;

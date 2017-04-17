@@ -2,6 +2,7 @@
 #include <string>
 #include "Nome.h"
 #include "Email.h"
+#include "Senha.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ int main () {
 	Email email;
 
 	flag = false;
+	
 	while (flag == false) {
 		try {	
 			cin >> teste;

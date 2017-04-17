@@ -1,7 +1,6 @@
-#ifndef NOME_H_
-#define NOME_H_
+#ifndef NOME_H_INCLUDED
+#define NOME_H_INCLUDED
 
-#include <iostream>
 #include <string>
 #include <stdexcept>
 
@@ -10,12 +9,18 @@ using namespace std;
 class Nome {
 
 private:
+	const static int LIMITE = 20;
 	string nome;
+
 	void valida(string) throw (invalid_argument);
 
 public:
 	void setNome(string) throw (invalid_argument);
-	string getNome();
+	string getNome() const;
 };
+
+inline string Nome::getNome() const {
+	return nome;
+}
 
 #endif

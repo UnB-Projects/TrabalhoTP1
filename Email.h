@@ -1,7 +1,7 @@
-#ifndef EMAIL_H_
-#define EMAIL_H_
+#ifndef EMAIL_H_INCLUDED
+#define EMAIL_H_INCLUDED
 
-#include <iostream>
+#include <stdexcept>
 #include <string>
 
 using namespace std;
@@ -17,7 +17,11 @@ public:
 	//Email(Nome, Nome, Nome);
 
 	void setEmail(string) throw (invalid_argument);
-	string getEmail();
+	string getEmail() const;
 };
+
+inline string Email::getEmail() const {
+	return this->email;
+}
 
 #endif

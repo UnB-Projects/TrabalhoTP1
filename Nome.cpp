@@ -1,26 +1,16 @@
-#include <iostream>
-#include <stdexcept>
 #include "Nome.h"
 
-using namespace std;
-
-//Nome::Nome(string nome) {
-//	this->nome = nome;
-//}
+const int Nome::LIMITE;
 
 void Nome::setNome(string nome) throw (invalid_argument) {
 	valida(nome);
 	this->nome = nome;
 }
 
-string Nome::getNome() {
-	return nome;
-}
-
 void Nome::valida(string nome) throw (invalid_argument) {
 	int i;
 
-	if (nome.size() > 20) {
+	if (nome.size() > LIMITE) {
 		throw invalid_argument("O nome nao pode ter mais que 20 caracteres\n");
 	}
 
