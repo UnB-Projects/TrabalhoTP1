@@ -1,26 +1,37 @@
 #ifndef _COMENTARIO_H_INCLUDED
 #define _COMENTARIO_H_INCLUDED
 
-#include <string>
-#include <stdexcept>
-
-using namespace std;
+#include "Texto.h"
+#include "Usuario.h"
 
 class Comentario {
 
 private:
-	string comentario;
-	const static int LIMITE_CARACTERES = 50;
-
-	void validar (string) throw (invalid_argument);
+	Texto comentario;
+	Usuario autor;
 
 public:
-	void setComentario(string) throw (invalid_argument);
-	string getComentario() const;
+	void setComentario (const Texto&);
+	void setAutor (const Usuario&);
+
+	Texto getComentario() const;
+	Usuario getAutor() const;
 };
 
-inline string Comentario::getComentario() const {
+inline void Comentario::setComentario (const Texto &comentario) {
+	this->comentario = comentario;
+}
+
+inline void Comentario::setAutor (const Usuario &autor) {
+	this->autor = autor;
+}
+
+inline Texto Comentario::getComentario() const {
 	return this->comentario;
+}
+
+inline Usuario Comentario::getAutor() const {
+	return this->autor;
 }
 
 #endif

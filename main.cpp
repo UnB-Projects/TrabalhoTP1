@@ -5,7 +5,10 @@
 #include "Email.h"
 #include "Senha.h"
 #include "Avaliacao.h"
+#include "Texto.h"
+#include "Usuario.h"
 #include "Comentario.h"
+#include "Blog.h"
 
 using namespace std;
 
@@ -19,8 +22,9 @@ int main () {
 	Email email;
 	Senha senha;
 	Avaliacao avaliacao;
-	Comentario comentario;
-
+	Texto texto;
+	vector<Comentario> vetor;
+/*
 	flag = false;
 	while (flag == false) {
 		try {
@@ -64,7 +68,7 @@ int main () {
 		}
 	}
 
-	cout << senha.getSenha() << endl;
+	cout << senha.getSenha() << endl;*/
 
 	flag = false;
 	while (flag == false) {
@@ -85,9 +89,9 @@ int main () {
 	while (flag == false) {
 		try {
 			getchar();
-			cout << "Insira seu comentario: ";	
+			cout << "Insira seu texto: ";	
 			getline(cin, testeString);
-			comentario.setComentario(testeString);
+			texto.setTexto(testeString);
 			flag = true;
 		}
 		catch(invalid_argument &ex) {
@@ -95,5 +99,19 @@ int main () {
 		}
 	}
 
-	cout << comentario.getComentario() << endl;
+	cout << texto.getTexto() << endl;
+
+	Comentario comentario;
+
+	comentario.setComentario(texto);
+	cout << "Comentario: " << comentario.getComentario().getTexto() << endl;
+	cout << "Endereco comentario: " << &texto << endl;
+
+	Postagem postagem;
+
+	postagem.setComentario(comentario);
+	vetor = postagem.getComentarios();
+	cout << "Vetor: " << vetor[0].getComentario().getTexto() << endl;
+	cout << "Endereco vetor: " << &vetor[0] << endl;
+
 }
