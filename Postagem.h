@@ -20,12 +20,13 @@ private:
 	vector<Avaliacao> avaliacao;
 
 	void calculaMediaAvaliacoes();
-	void verificaLimiteComentarios(const &Comentario) throw (invalid_argument);
+	void verificaLimiteComentarios(const Comentario&) throw (invalid_argument); //implementar na lista 2
+	void verificaLimiteAvaliacoes(const Avaliacao&) throw (invalid_argument); //implementar na lista 2
 
 public:
 	void setPostagem (const Texto&);
-	void setComentario (const Comentario&) throw(invalid_argument);
-	void setAvaliacao(const Avaliacao&);
+	void setComentario (const Comentario&); //realizar verificacao na lista 2
+	void setAvaliacao(const Avaliacao&); //verificar se usuario ja avaliou na lista 2
 	
 	double getMediaAvaliacoes() const;
 	Texto getPostagem() const;
