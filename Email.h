@@ -14,8 +14,6 @@ private:
 	void valida(string) throw (invalid_argument);
 
 public:
-	//Email(Nome, Nome, Nome);
-
 	void setEmail(string) throw (invalid_argument);
 	string getEmail() const;
 };

@@ -1,30 +1,29 @@
-#include "TUNome.h"
+#include "TUEmail.h"
 
-string TUNome::NOME_VALIDO = "Igor Figueira";
-string TUNome::NOME_INVALIDO = "Mais de vinte caracteres";
-
-const int TUNome::SUCESSO;
-const int TUNome::FALHA;
+const string TUEmail::EMAIL_VALIDO = "igorfgds@gmail.com";
+const string TUEmail::EMAIL_INVALIDO = "igor.dinossauro@com";
+const int TUEmail::SUCESSO;
+const int TUEmail::FALHA;
 
 //Alocacao dinamica para os objetos que serao tratados pelo teste
-void TUNome::setUp() {
-	nome = new Nome();
+void TUEmail::setUp() {
+	email = new Email();
 	estado = SUCESSO;
 }
 
 //Liberacao de memoria referente aos objetos alocados dinamicamente
-void TUNome::tearDown() {
-	delete nome;
+void TUEmail::tearDown() {
+	delete email;
 }
 
 //Teste de sucesso verifica se as excecoes nao capturam valores validos
-void TUNome::testeSucesso() {
-	try{
-		nome->setNome(NOME_VALIDO);
+void TUEmail::testeSucesso() {
+	try {
+		email->setEmail(EMAIL_VALIDO);
 
 		//Tambem eh verificado se o atributo foi realmente setado atraves de uma comparacao
 		//entre o que deve ser setado e o metodo get
-		if (nome->getNome().compare(NOME_VALIDO) != 0) {
+		if (email->getEmail().compare(EMAIL_VALIDO) != 0) {
 			estado = FALHA;
 		}
 	}
@@ -36,9 +35,9 @@ void TUNome::testeSucesso() {
 
 //No teste de falha, caso um valor invalido consiga ser setado
 //houve uma falha na funcao de verificacao da classe
-void TUNome::testeFalha() {
+void TUEmail::testeFalha() {
 	try {
-		nome->setNome(NOME_INVALIDO);
+		email->setEmail(EMAIL_INVALIDO);
 
 		//Caso o bloco try chegue a linha de codigo seguinte, significa que o teste falhou
 		estado = FALHA;
@@ -49,7 +48,7 @@ void TUNome::testeFalha() {
 }
 
 //O metodo run ira rodar todo o teste de unidade
-int TUNome::run() {
+int TUEmail::run() {
 	setUp();
 	testeSucesso();
 	testeFalha();

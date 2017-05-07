@@ -1,48 +1,41 @@
 #ifndef _POSTAGEM_H_INCLUDED
 #define _POSTAGEM_H_INCLUDED
 
-#include <vector>
-#include <stdexcept>
 #include <string>
-#include "Usuario.h"
 #include "Texto.h"
-#include "Comentario.h"
 #include "Avaliacao.h"
 
 class Postagem {
 
 private:
-	const static int LIMITE_COMENTARIOS = 5;
-	const static int LIMITE_AVALIACOES = 1;
-
+	//Atributos foram simplificados para atender somente as exigencias da lista 1,
+	//que nao preve relacionamento entre entidades ainda
 	Texto postagem;
-	vector<Comentario> comentario;
-	vector<Avaliacao> avaliacao;
-
-	void calculaMediaAvaliacoes();
-	void verificaLimiteComentarios(const Comentario&) throw (invalid_argument); //implementar na lista 2
-	void verificaLimiteAvaliacoes(const Avaliacao&) throw (invalid_argument); //implementar na lista 2
+	Avaliacao avaliacao;
 
 public:
+	//Metodos tambem foram simplificados, consequentemente
 	void setPostagem (const Texto&);
-	void setComentario (const Comentario&); //realizar verificacao na lista 2
-	void setAvaliacao(const Avaliacao&); //verificar se usuario ja avaliou na lista 2
-	
-	double getMediaAvaliacoes() const;
+	void setAvaliacao(const Avaliacao&);
+
 	Texto getPostagem() const;
-	vector<Comentario> getComentarios() const;
+	Avaliacao getAvaliacao() const;
 };
 
 inline void Postagem::setPostagem(const Texto &postagem) {
 	this->postagem = postagem;
 }
 
+inline void Postagem::setAvaliacao(const Avaliacao &avaliacao) {
+	this->avaliacao = avaliacao;
+}
+
 inline Texto Postagem::getPostagem() const {
 	return this->postagem;
 }
 
-inline vector<Comentario> Postagem::getComentarios() const {
-	return this->comentario;
+inline Avaliacao Postagem::getAvaliacao() const {
+	return this->avaliacao;
 }
 
 

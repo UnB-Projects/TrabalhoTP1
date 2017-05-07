@@ -1,15 +1,15 @@
-#ifndef _TUNOME_H_INCLUDED
-#define _TUNOME_H_INCLUDED
+#ifndef _TUEMAIL_H_INCLUDED
+#define _TUEMAIL_H_INCLUDED
 
-#include "Nome.h"
+#include "Email.h"
 
-class TUNome {
+class TUEmail {
 
 private:
-	static string NOME_VALIDO;
-	static string NOME_INVALIDO;
+	const static string EMAIL_VALIDO;
+	const static string EMAIL_INVALIDO;
 
-	Nome *nome;
+	Email *email;
 	int estado;
 
 	void setUp();

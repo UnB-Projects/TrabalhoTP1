@@ -1,15 +1,15 @@
-#ifndef _TUNOME_H_INCLUDED
-#define _TUNOME_H_INCLUDED
+#ifndef _TUSENHA_H_INCLUDED
+#define _TUSENHA_H_INCLUDED
 
-#include "Nome.h"
+#include "Senha.h"
 
-class TUNome {
+class TUSenha {
 
 private:
-	static string NOME_VALIDO;
-	static string NOME_INVALIDO;
+	const static string SENHA_VALIDA;
+	const static string SENHA_INVALIDA;
 
-	Nome *nome;
+	Senha *senha;
 	int estado;
 
 	void setUp();

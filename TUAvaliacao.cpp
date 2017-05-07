@@ -1,30 +1,29 @@
-#include "TUNome.h"
+#include "TUAvaliacao.h"
 
-string TUNome::NOME_VALIDO = "Igor Figueira";
-string TUNome::NOME_INVALIDO = "Mais de vinte caracteres";
-
-const int TUNome::SUCESSO;
-const int TUNome::FALHA;
+const int TUAvaliacao::AVALIACAO_VALIDA = 3;
+const int TUAvaliacao::AVALIACAO_INVALIDA = 6;
+const int TUAvaliacao::SUCESSO;
+const int TUAvaliacao::FALHA;
 
 //Alocacao dinamica para os objetos que serao tratados pelo teste
-void TUNome::setUp() {
-	nome = new Nome();
+void TUAvaliacao::setUp() {
+	avaliacao = new Avaliacao();
 	estado = SUCESSO;
 }
 
 //Liberacao de memoria referente aos objetos alocados dinamicamente
-void TUNome::tearDown() {
-	delete nome;
+void TUAvaliacao::tearDown() {
+	delete avaliacao;
 }
 
 //Teste de sucesso verifica se as excecoes nao capturam valores validos
-void TUNome::testeSucesso() {
-	try{
-		nome->setNome(NOME_VALIDO);
+void TUAvaliacao::testeSucesso() {
+	try {
+		avaliacao->setAvaliacao(AVALIACAO_VALIDA);
 
 		//Tambem eh verificado se o atributo foi realmente setado atraves de uma comparacao
 		//entre o que deve ser setado e o metodo get
-		if (nome->getNome().compare(NOME_VALIDO) != 0) {
+		if (avaliacao->getAvaliacao() != AVALIACAO_VALIDA) {
 			estado = FALHA;
 		}
 	}
@@ -36,9 +35,9 @@ void TUNome::testeSucesso() {
 
 //No teste de falha, caso um valor invalido consiga ser setado
 //houve uma falha na funcao de verificacao da classe
-void TUNome::testeFalha() {
+void TUAvaliacao::testeFalha() {
 	try {
-		nome->setNome(NOME_INVALIDO);
+		avaliacao->setAvaliacao(AVALIACAO_INVALIDA);
 
 		//Caso o bloco try chegue a linha de codigo seguinte, significa que o teste falhou
 		estado = FALHA;
@@ -48,8 +47,9 @@ void TUNome::testeFalha() {
 	}
 }
 
+
 //O metodo run ira rodar todo o teste de unidade
-int TUNome::run() {
+int TUAvaliacao::run() {
 	setUp();
 	testeSucesso();
 	testeFalha();

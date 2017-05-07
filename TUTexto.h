@@ -1,15 +1,15 @@
-#ifndef _TUNOME_H_INCLUDED
-#define _TUNOME_H_INCLUDED
+#ifndef _TUTEXTO_H_INCLUDED
+#define _TUTEXTO_H_INCLUDED
 
-#include "Nome.h"
+#include "Texto.h"
 
-class TUNome {
+class TUTexto {
 
 private:
-	static string NOME_VALIDO;
-	static string NOME_INVALIDO;
+	const static string TEXTO_VALIDO;
+	const static string TEXTO_INVALIDO;
 
-	Nome *nome;
+	Texto *texto;
 	int estado;
 
 	void setUp();

@@ -1,29 +1,30 @@
 #ifndef _BLOG_H_INCLUDED
 #define _BLOG_H_INCLUDED
 
-#include <vector>
-#include "Usuario.h"
 #include "Nome.h"
-#include "Postagem.h"
+#include "Texto.h"
 
 class Blog {
 
 private:
-	Usuario autor;
+	//Atributos foram simplificados para atender somente as exigencias da lista 1,
+	//que nao preve relacionamento entre entidades ainda
+	Nome autor;
 	Nome nome;
-	vector<Postagem> postagem;
+	Texto postagem;
 
 public:
-	void setAutor (const Usuario&);
+	//Metodos tambem foram simplificados, consequentemente
+	void setAutor (const Nome&);
 	void setNome(const Nome&);
-	void setPostagens(const vector<Postagem>&);
+	void setPostagem(const Texto&);
 
-	Usuario getAutor() const;
+	Nome getAutor() const;
 	Nome getNome() const;
-	vector<Postagem> getPostagens() const;
+	Texto getPostagem() const;
 };
 
-inline void Blog::setAutor(const Usuario &autor) {
+inline void Blog::setAutor(const Nome &autor) {
 	this->autor = autor;
 }
 
@@ -31,11 +32,11 @@ inline void Blog::setNome(const Nome &nome) {
 	this->nome = nome;
 }
 
-inline void Blog::setPostagens(const vector<Postagem> &postagem) {
+inline void Blog::setPostagem(const Texto &postagem) {
 	this->postagem = postagem;
 }
 
-inline Usuario Blog::getAutor() const {
+inline Nome Blog::getAutor() const {
 	return this->autor;
 }
 
@@ -43,7 +44,7 @@ inline Nome Blog::getNome() const {
 	return this->nome;
 }
 
-inline vector<Postagem> Blog::getPostagens() const {
+inline Texto Blog::getPostagem() const {
 	return this->postagem;
 }
 

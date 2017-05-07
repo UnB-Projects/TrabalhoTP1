@@ -9,8 +9,7 @@ using namespace std;
 
 class Senha {
 
-private:
-	
+private:	
 	const static int TAMANHO_SENHA = 5;
 	string senha;
 
