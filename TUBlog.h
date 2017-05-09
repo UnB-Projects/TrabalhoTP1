@@ -3,6 +3,10 @@
 
 #include "Blog.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Blog
+*/
+
 class TUBlog {
 
 private:

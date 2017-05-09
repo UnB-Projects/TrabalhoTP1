@@ -3,6 +3,10 @@
 
 #include "Texto.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Texto
+*/
+
 class TUTexto {
 
 private:

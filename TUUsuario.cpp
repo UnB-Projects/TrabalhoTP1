@@ -49,7 +49,7 @@ void TUUsuario::testeSucesso() {
 	}
 }
 
-//O metodo run ira rodar todo o teste de unidade
+///O metodo run ira rodar todo o teste de unidade
 int TUUsuario::run() {
 	setUp();
 	testeSucesso();

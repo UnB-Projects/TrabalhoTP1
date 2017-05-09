@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/**
+*Classe que gerencia as Senhas dos Usuarios do Blog 
+*/
+
 class Senha {
 
 private:	

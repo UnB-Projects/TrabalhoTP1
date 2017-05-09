@@ -50,7 +50,6 @@ int main () {
 	}
 
 	//TESTE DE UNIDADE EMAIL
-
 	sucesso = testeEmail.run();
 
 	cout << "Teste Email: ";
@@ -63,7 +62,6 @@ int main () {
 	}
 
 	//TESTE DE UNIDADE AVALIACAO
-
 	sucesso = testeAvaliacao.run();
 
 	cout << "Teste Avaliacao: ";
@@ -76,7 +74,6 @@ int main () {
 	}
 
 	//TESTE DE UNIDADE TEXTO
-
 	sucesso = testeTexto.run();
 
 	cout << "Teste Texto: ";
@@ -89,7 +86,6 @@ int main () {
 	}
 
 	//TESTE DE UNIDADE BLOG	
-
 	sucesso = testeBlog.run();
 
 	cout << "Teste Blog: ";
@@ -102,7 +98,6 @@ int main () {
 	}
 
 	//TESTE DE UNIDADE COMENTARIO	
-
 	sucesso = testeComentario.run();
 
 	cout << "Teste Comentario: ";
@@ -115,7 +110,6 @@ int main () {
 	}	
 
 	//TESTE DE UNIDADE POSTAGEM
-
 	sucesso = testePostagem.run();
 
 	cout << "Teste Postagem: ";
@@ -128,7 +122,6 @@ int main () {
 	}
 
 	//TESTE DE UNIDADE USUARIO
-
 	sucesso = testeUsuario.run();
 
 	cout << "Teste Usuario: ";

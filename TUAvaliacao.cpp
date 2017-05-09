@@ -21,25 +21,27 @@ void TUAvaliacao::testeSucesso() {
 	try {
 		avaliacao->setAvaliacao(AVALIACAO_VALIDA);
 
-		//Tambem eh verificado se o atributo foi realmente setado atraves de uma comparacao
-		//entre o que deve ser setado e o metodo get
+		//Tambem eh verificado se o atributo foi realmente setado atraves de
+		//uma comparacao entre o que deve ser setado e o metodo get
 		if (avaliacao->getAvaliacao() != AVALIACAO_VALIDA) {
 			estado = FALHA;
 		}
 	}
+
 	//Caso seja lancada uma excecao com um valor valido, o teste de unidade falha
 	catch(invalid_argument &ex) {
 		estado = FALHA;
 	}
 }
 
-//No teste de falha, caso um valor invalido consiga ser setado
-//houve uma falha na funcao de verificacao da classe
+//No teste de falha, caso um valor invalido consiga ser setado houve uma falha na funcao de verificacao da classe
 void TUAvaliacao::testeFalha() {
 	try {
 		avaliacao->setAvaliacao(AVALIACAO_INVALIDA);
 
-		//Caso o bloco try chegue a linha de codigo seguinte, significa que o teste falhou
+		/**
+		*Caso o bloco try chegue a linha de codigo seguinte, significa que o teste falhou
+		*/
 		estado = FALHA;
 	}
 	catch(invalid_argument &ex) {
@@ -48,7 +50,7 @@ void TUAvaliacao::testeFalha() {
 }
 
 
-//O metodo run ira rodar todo o teste de unidade
+///O metodo run ira rodar todo o teste de unidade
 int TUAvaliacao::run() {
 	setUp();
 	testeSucesso();

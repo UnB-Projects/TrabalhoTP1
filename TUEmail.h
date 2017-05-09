@@ -3,6 +3,10 @@
 
 #include "Email.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Email
+*/
+
 class TUEmail {
 
 private:

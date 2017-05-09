@@ -2,6 +2,7 @@
 
 const int Texto::LIMITE_CARACTERES;
 
+///O texto so sera setado se ele nao ultrapassar o limite de 50 caracteres
 void Texto::setTexto(string texto) throw (invalid_argument) {
 	validar(texto);
 	this->texto = texto;

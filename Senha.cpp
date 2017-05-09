@@ -2,6 +2,7 @@
 
 const int Senha::TAMANHO_SENHA;
 
+///A senha soh sera setada se obedecer a regra de ter 5 caracteres
 void Senha::setSenha(string senha) throw (invalid_argument) {
 	validar (senha);
 	this->senha = senha;
@@ -18,8 +19,7 @@ void Senha::validar(string senha) throw (invalid_argument) {
 	//A string eh ordenada para a verificacao de caracteres repetidos no loop seguinte
 	sort(senha.begin(), senha.end());
 
-	//Caso um caractere seja igual a seu antecessor apos a ordenacao
-	//existe um caractere repitido na senha
+	//Caso um caractere seja igual a seu antecessor apos a ordenacao existe um caractere repitido na senha
 	for (i = 1; i < senha.size(); i++) {
 		if (senha[i] == senha[i-1]) {
 			throw invalid_argument("Nao podem haver caracteres repetidos\n");

@@ -4,16 +4,17 @@
 #include "Texto.h"
 #include "Nome.h"
 
+/**
+*Classe que define os Comentarios do trabalho, atributos e métodos foram simplificados para atender as exigências da lista 1.
+*/
+
 class Comentario {
 
 private:
-	//Atributos foram simplificados para atender somente as exigencias da lista 1,
-	//que nao preve relacionamento entre entidades ainda
 	Texto comentario;
 	Nome autor;
 
 public:
-	//Metodos tambem foram simplificados, consequentemente
 	void setComentario (const Texto&);
 	void setAutor (const Nome&);
 

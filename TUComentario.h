@@ -3,6 +3,10 @@
 
 #include "Comentario.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Comentario
+*/
+
 class TUComentario {
 
 private:

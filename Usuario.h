@@ -5,6 +5,10 @@
 #include "Email.h"
 #include "Senha.h"
 
+/**
+*Classe que define os Usuarios do trabalho, atributos e métodos foram simplificados para atender as exigências da lista 1.
+*/
+
 class Usuario {
 
 private:

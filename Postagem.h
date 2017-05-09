@@ -5,16 +5,17 @@
 #include "Texto.h"
 #include "Avaliacao.h"
 
+/**
+*Classe que define as Postagens do trabalho, atributos e métodos foram simplificados para atender as exigências da lista 1.
+*/
+
 class Postagem {
 
 private:
-	//Atributos foram simplificados para atender somente as exigencias da lista 1,
-	//que nao preve relacionamento entre entidades ainda
 	Texto postagem;
 	Avaliacao avaliacao;
 
 public:
-	//Metodos tambem foram simplificados, consequentemente
 	void setPostagem (const Texto&);
 	void setAvaliacao(const Avaliacao&);
 

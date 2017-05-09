@@ -6,6 +6,9 @@
 
 using namespace std;
 
+/**
+*Classe que gerencia os Nomes dos Usuarios do e dos Blogs
+*/
 class Nome {
 
 private:

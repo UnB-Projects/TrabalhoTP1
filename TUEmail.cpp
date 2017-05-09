@@ -21,20 +21,20 @@ void TUEmail::testeSucesso() {
 	try {
 		email->setEmail(EMAIL_VALIDO);
 
-		//Tambem eh verificado se o atributo foi realmente setado atraves de uma comparacao
-		//entre o que deve ser setado e o metodo get
+		//Tambem eh verificado se o atributo foi realmente setado atraves de
+		//uma comparacao entre o que deve ser setado e o metodo get
 		if (email->getEmail().compare(EMAIL_VALIDO) != 0) {
 			estado = FALHA;
 		}
 	}
+
 	//Caso seja lancada uma excecao com um valor valido, o teste de unidade falha
 	catch(invalid_argument &ex) {
 		estado = FALHA;
 	}
 }
 
-//No teste de falha, caso um valor invalido consiga ser setado
-//houve uma falha na funcao de verificacao da classe
+//No teste de falha, caso um valor invalido consiga ser setado houve uma falha na funcao de verificacao da classe
 void TUEmail::testeFalha() {
 	try {
 		email->setEmail(EMAIL_INVALIDO);
@@ -47,7 +47,7 @@ void TUEmail::testeFalha() {
 	}
 }
 
-//O metodo run ira rodar todo o teste de unidade
+///O metodo run ira rodar todo o teste de unidade
 int TUEmail::run() {
 	setUp();
 	testeSucesso();

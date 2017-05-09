@@ -41,7 +41,7 @@ void TUComentario::testeSucesso() {
 	}
 }
 
-//O metodo run ira rodar todo o teste de unidade
+///O metodo run ira rodar todo o teste de unidade
 int TUComentario::run() {
 	setUp();
 	testeSucesso();

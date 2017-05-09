@@ -41,7 +41,7 @@ void TUPostagem::testeSucesso() {
 	}
 }
 
-//O metodo run ira rodar todo o teste de unidade
+///O metodo run ira rodar todo o teste de unidade
 int TUPostagem::run() {
 	setUp();
 	testeSucesso();

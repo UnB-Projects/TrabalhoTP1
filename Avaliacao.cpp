@@ -3,10 +3,9 @@
 const int Avaliacao::AVALIACAO_MINIMA;
 const int Avaliacao::AVALIACAO_MAXIMA;
 
+///Avaliacao soh sera setada caso esteja dentro do intervalo definido (1 a 5)
 void Avaliacao::setAvaliacao(int avaliacao) throw (invalid_argument) {
 	validar(avaliacao);
-
-	//Avaliacao soh eh "setada" caso ela passe pela validacao
 	this->avaliacao = avaliacao;
 }
 

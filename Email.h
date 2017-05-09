@@ -6,6 +6,9 @@
 
 using namespace std;
 
+/**
+*Classe que gerencia os Emails dos Usuarios do Blog
+*/
 class Email {
 
 private:

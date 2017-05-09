@@ -3,6 +3,10 @@
 
 #include "Avaliacao.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Avaliacao
+*/
+
 class TUAvaliacao {
 
 private:

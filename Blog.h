@@ -4,17 +4,17 @@
 #include "Nome.h"
 #include "Texto.h"
 
+/**
+*Classe que define os Blogs do trabalho, atributos e métodos foram simplificados para atender as exigências da lista 1.
+*/
 class Blog {
 
 private:
-	//Atributos foram simplificados para atender somente as exigencias da lista 1,
-	//que nao preve relacionamento entre entidades ainda
 	Nome autor;
 	Nome nome;
 	Texto postagem;
 
 public:
-	//Metodos tambem foram simplificados, consequentemente
 	void setAutor (const Nome&);
 	void setNome(const Nome&);
 	void setPostagem(const Texto&);

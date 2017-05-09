@@ -3,6 +3,10 @@
 
 #include "Senha.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Senha
+*/
+
 class TUSenha {
 
 private:

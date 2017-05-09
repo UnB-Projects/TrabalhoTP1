@@ -3,6 +3,10 @@
 
 #include "Postagem.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Postagem
+*/
+
 class TUPostagem {
 
 private:

@@ -5,14 +5,14 @@
 
 using namespace std;
 
-//Classe que gerencia as avaliacoes do blog
+/**
+*Classe que gerencia as Avaliacoes dos Comentarios do Blog
+*/
 
 class Avaliacao {
 
 private:
 	int avaliacao;
-
-	//Definicao do intervalo de avaliacao
 
 	const static int AVALIACAO_MINIMA = 1;
 	const static int AVALIACAO_MAXIMA = 5;

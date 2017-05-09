@@ -3,6 +3,10 @@
 
 #include "Usuario.h"
 
+/**
+*Classe que realiza o teste de unidade da classe Usuario
+*/
+
 class TUUsuario {
 
 private:

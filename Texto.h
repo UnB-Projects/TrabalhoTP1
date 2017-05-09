@@ -6,6 +6,10 @@
 
 using namespace std;
 
+/**
+*Classe que armazena os Textos das Postagens e dos Comentarios do Blog
+*/
+
 class Texto {
 
 private:

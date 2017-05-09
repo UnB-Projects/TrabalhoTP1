@@ -1,5 +1,6 @@
 #include "Email.h"
 
+///Email soh sera setado se estiver no formato L\@L.L, onde L sao letras
 void Email::setEmail(string email) throw (invalid_argument) {
 	valida(email);
 	this->email = email;
@@ -42,7 +43,7 @@ void Email::valida(string email) throw (invalid_argument) {
 		i++;
 	}
 
-	//Finalmente checamos se a string verificadora eh igual a "@."
+	//Finalmente checamos se a string verificadora eh igual a "@.".
 	//Caso nao seja, significa que '@' e '.' estao fora de ordem, ou existe mais de um deles no email
 	if (verifica.compare("@.") != 0) {
 		throw invalid_argument ("O email deve ser no formato L@L.L, onde L sao letras.");
