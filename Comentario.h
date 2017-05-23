@@ -2,31 +2,27 @@
 #define _COMENTARIO_H_INCLUDED
 
 #include "Texto.h"
-#include "Nome.h"
-
-/**
-*Classe que define os Comentarios do trabalho, atributos e métodos foram simplificados para atender as exigências da lista 1.
-*/
+#include "Usuario.h"
 
 class Comentario {
 
 private:
 	Texto comentario;
-	Nome autor;
+	Usuario autor;
 
 public:
 	void setComentario (const Texto&);
-	void setAutor (const Nome&);
+	void setAutor (const Usuario&);
 
 	Texto getComentario() const;
-	Nome getAutor() const;
+	Usuario getAutor() const;
 };
 
 inline void Comentario::setComentario (const Texto &comentario) {
 	this->comentario = comentario;
 }
 
-inline void Comentario::setAutor (const Nome &autor) {
+inline void Comentario::setAutor (const Usuario &autor) {
 	this->autor = autor;
 }
 
@@ -34,7 +30,7 @@ inline Texto Comentario::getComentario() const {
 	return this->comentario;
 }
 
-inline Nome Comentario::getAutor() const {
+inline Usuario Comentario::getAutor() const {
 	return this->autor;
 }
 

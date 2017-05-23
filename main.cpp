@@ -1,135 +1,53 @@
+#if defined(_WIN32)
+	#define CLEAR system("cls");						
+#else
+	#define CLEAR system("clear");
+#endif
+
 #include <iostream>
-#include "TUNome.h"
-#include "TUSenha.h"
-#include "TUEmail.h"
-#include "TUAvaliacao.h"
-#include "TUTexto.h"
-#include "TUBlog.h"
-#include "TUComentario.h"
-#include "TUPostagem.h"
-#include "TUUsuario.h"
+#include "Stubs.h"
+#include "IUAutenticacao.h"
+#include "Resultados.h"
 
 using namespace std;
 
 int main () {
-	//Instanciados todos os objetos de teste de unidade
-	TUNome testeNome;
-	TUSenha testeSenha;
-	TUEmail testeEmail;
-	TUAvaliacao testeAvaliacao;
-	TUTexto testeTexto;
-	TUBlog testeBlog;
-	TUComentario testeComentario;
-	TUPostagem testePostagem;
-	TUUsuario testeUsuario;
-	
-	int sucesso;
+	IUAutenticacao  *cntrIUAutenticacao = new CntrIUAutenticacao();
+    ILNAutenticacao *stubLNAutenticacao = new StubLNAutenticacao();
 
-	//TESTE DE UNIDADE NOME
-	sucesso = testeNome.run();
+    cntrIUAutenticacao->setCntrLNAutenticacao(stubLNAutenticacao);
 
-	cout << "Teste Nome: ";
+    cout << endl << "VALORES DOS TRIGGERS:" << endl << endl;
+    cout << "Email invalido = " << "teste@com" << endl;
+    cout << "Senha invalida = " << "123456" << endl;
+    cout << "Trigger de falha = " << StubLNAutenticacao::TRIGGER_FALHA << endl;
+    cout << "Trigger de erro de sistema  = " << StubLNAutenticacao::TRIGGER_ERRO_SISTEMA << endl;
 
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
+    ResultadoAutenticacao resultado;
 
-	//TESTE DE UNIDADE SENHA
-	sucesso = testeSenha.run();
+    while(true){
+        // Simula a tela de apreesntacao (tela inicial) de sistema.
 
-	cout << "Teste Senha: ";
+        cout << endl << "Tela de apresentacao de sistema." << endl;
 
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
+        try{
 
-	//TESTE DE UNIDADE EMAIL
-	sucesso = testeEmail.run();
+            // Ilustra soliciatacao de serviço de autenticação.
 
-	cout << "Teste Email: ";
+            resultado = cntrIUAutenticacao->autenticar();
+        }
+        catch(const runtime_error &exp){
+                 cout << "Erro de sistema." << endl;
+        }
 
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
+        // Critica o resultado da autenticação.
 
-	//TESTE DE UNIDADE AVALIACAO
-	sucesso = testeAvaliacao.run();
+        if(resultado.getValor() == ResultadoAutenticacao::SUCESSO) {
+            break;
+        }
+    }
 
-	cout << "Teste Avaliacao: ";
+    // Acessa matrícula retornada da autenticação.
 
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
-
-	//TESTE DE UNIDADE TEXTO
-	sucesso = testeTexto.run();
-
-	cout << "Teste Texto: ";
-
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
-
-	//TESTE DE UNIDADE BLOG	
-	sucesso = testeBlog.run();
-
-	cout << "Teste Blog: ";
-
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
-
-	//TESTE DE UNIDADE COMENTARIO	
-	sucesso = testeComentario.run();
-
-	cout << "Teste Comentario: ";
-
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}	
-
-	//TESTE DE UNIDADE POSTAGEM
-	sucesso = testePostagem.run();
-
-	cout << "Teste Postagem: ";
-
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}
-
-	//TESTE DE UNIDADE USUARIO
-	sucesso = testeUsuario.run();
-
-	cout << "Teste Usuario: ";
-
-	if (sucesso) {
-		cout << "Sucesso" << endl;
-	}
-	else {
-		cout << "Falha" << endl;
-	}	
+    Email email = resultado.getEmail();
 }

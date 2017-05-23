@@ -1,30 +1,30 @@
+
 #ifndef _BLOG_H_INCLUDED
 #define _BLOG_H_INCLUDED
 
+#include <vector>
+#include "Usuario.h"
 #include "Nome.h"
-#include "Texto.h"
+#include "Postagem.h"
 
-/**
-*Classe que define os Blogs do trabalho, atributos e métodos foram simplificados para atender as exigências da lista 1.
-*/
 class Blog {
 
 private:
-	Nome autor;
+	Usuario autor;
 	Nome nome;
-	Texto postagem;
+	vector<Postagem> postagem;
 
 public:
-	void setAutor (const Nome&);
+	void setAutor (const Usuario&);
 	void setNome(const Nome&);
-	void setPostagem(const Texto&);
+	void setPostagens(const vector<Postagem>&);
 
-	Nome getAutor() const;
+	Usuario getAutor() const;
 	Nome getNome() const;
-	Texto getPostagem() const;
+	vector<Postagem> getPostagens() const;
 };
 
-inline void Blog::setAutor(const Nome &autor) {
+inline void Blog::setAutor(const Usuario &autor) {
 	this->autor = autor;
 }
 
@@ -32,11 +32,11 @@ inline void Blog::setNome(const Nome &nome) {
 	this->nome = nome;
 }
 
-inline void Blog::setPostagem(const Texto &postagem) {
+inline void Blog::setPostagens(const vector<Postagem> &postagem) {
 	this->postagem = postagem;
 }
 
-inline Nome Blog::getAutor() const {
+inline Usuario Blog::getAutor() const {
 	return this->autor;
 }
 
@@ -44,7 +44,7 @@ inline Nome Blog::getNome() const {
 	return this->nome;
 }
 
-inline Texto Blog::getPostagem() const {
+inline vector<Postagem> Blog::getPostagens() const {
 	return this->postagem;
 }
 
