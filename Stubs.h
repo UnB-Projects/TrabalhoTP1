@@ -1,10 +1,17 @@
 #ifndef STUBS_H_INCLUDED
 #define STUBS_H_INCLUDED
 
-#include "Resultados.h"
-#include "IUAutenticacao.h"
+#include <iostream>
+#include <stdexcept> 
+#include "Interfaces.h"
+
 #include "Email.h"
 #include "Senha.h"
+#include <iostream>
+
+#include <stdexcept> 
+
+using namespace std;
 
 class StubLNAutenticacao:public ILNAutenticacao{  // classe implementa interface.
 
@@ -19,5 +26,7 @@ public:
 
     ResultadoAutenticacao autenticar(const Email&, const Senha&) throw(runtime_error);
 };
+
+
 
 #endif

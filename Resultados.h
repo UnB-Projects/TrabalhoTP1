@@ -2,6 +2,8 @@
 #define RESULTADOS_H_INCLUDED
 
 #include "Email.h"
+#include "Senha.h"
+#include "Blog.h"
 
 class Resultado {
 
@@ -36,6 +38,19 @@ public:
 
 	Email getEmail() const {
 		return email;
+	}
+};
+
+class ResultadoBlog:public Resultado{
+private:
+	Blog blog;
+public:
+	void setBlog(const Blog &blog){
+		this->blog = blog;
+	}
+	
+	Blog getBlog() const{
+		return blog;
 	}
 };
 

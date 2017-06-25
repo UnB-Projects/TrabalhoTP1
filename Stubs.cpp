@@ -1,5 +1,6 @@
 #include "Stubs.h"
 
+
 const string StubLNAutenticacao::TRIGGER_FALHA = "igorfgds@gmail.com";
 const string StubLNAutenticacao::TRIGGER_ERRO_SISTEMA = "gabriel@outlook.com";
 
@@ -9,8 +10,8 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const Email &email, const S
 
     cout << endl << "StubLNAutenticacao::autenticar" << endl ;
 
-    cout << "Email = " << email.getEmail() << endl ;
-    cout << "Senha = " << senha.getSenha() << endl ;
+    cout << "Email: " << email.getEmail() << endl ;
+    cout << "Senha: " << senha.getSenha() << endl ;
 
     ResultadoAutenticacao resultado;
 

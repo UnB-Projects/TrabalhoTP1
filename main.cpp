@@ -5,18 +5,24 @@
 #endif
 
 #include <iostream>
+#include "Controladoras.h"
 #include "Stubs.h"
-#include "IUAutenticacao.h"
-#include "Resultados.h"
-
+#include "Interfaces.h"
+#include "Resultados.h" // pra poder instanciar um tipo IUAunteticacao
+#include "Blog.h"
 using namespace std;
 
 int main () {
+	
+	// Ligacao entre controladora de interacao e stub de negocio
+	// Instancia as controladoras
 	IUAutenticacao  *cntrIUAutenticacao = new CntrIUAutenticacao();
     ILNAutenticacao *stubLNAutenticacao = new StubLNAutenticacao();
 
+	// Liga (link) instancia da controladora de interacao a instancia do stub de negocio.
     cntrIUAutenticacao->setCntrLNAutenticacao(stubLNAutenticacao);
 
+	// valores invalidos
     cout << endl << "VALORES DOS TRIGGERS:" << endl << endl;
     cout << "Email invalido = " << "teste@com" << endl;
     cout << "Senha invalida = " << "123456" << endl;
@@ -47,7 +53,21 @@ int main () {
         }
     }
 
-    // Acessa matrícula retornada da autenticação.
+    // Acessa matricula retornada da autenticacao
 
     Email email = resultado.getEmail();
+    
+    // ----------------------------------------------------------
+    
+    // Cria referencia para  a controladora de interface com o usuario responsavel por servicos do blog, apos estar logado
+    
+    IUBlog *cntrIUBlog = new CntrIUBlog();
+    //ILNBlog *sutbLNBlog = new StubBlog();
+    
+    
+    
 }
+
+
+
+
