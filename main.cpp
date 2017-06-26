@@ -10,6 +10,7 @@
 #include "Interfaces.h"
 #include "Resultados.h" // pra poder instanciar um tipo IUAunteticacao
 #include "Blog.h"
+#include "Stubs.h"
 using namespace std;
 
 int main () {
@@ -62,9 +63,22 @@ int main () {
     // Cria referencia para  a controladora de interface com o usuario responsavel por servicos do blog, apos estar logado
     
     IUBlog *cntrIUBlog = new CntrIUBlog();
-    //ILNBlog *sutbLNBlog = new StubBlog();
+    ILNBlog *stubLNBlog = new StubLNBlog();
     
+    // Liga (link) instância da controladora de blog a instância do stub de negocio.
+
+    cntrIUBlog->setCntrLNBlog(stubLNBlog);
     
+    // Liga (link) instância da controladora de projeto a instância do stub de negocio.
+
+    cntrIUBlog->setCntrLNBlog(stubLNBlog);
+
+    try{
+        cntrIUBlog->executar(email);
+    }
+    catch(const runtime_error &exp){
+        cout << "Erro de sistema." << endl;
+    }
     
 }
 

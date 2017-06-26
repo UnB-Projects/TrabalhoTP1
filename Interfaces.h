@@ -4,6 +4,7 @@
 #include "Resultados.h"
 #include "Email.h"
 #include "Senha.h"
+#include "Codigo.h"
 
 #include <stdexcept>
 
@@ -48,14 +49,14 @@ public:
 
 
 // Declaração de interface para o serviço de conta na camada de negócio.
-/*class ILNBlog {
+class ILNBlog {
 public:
     //virtual ResultadoBlog Blog(const Blog&) throw(runtime_error) = 0;
-    /*virtual ResultadoConta excluir(const Codigo&) throw(runtime_error) = 0;
-    virtual ResultadoConta editar(const Conta&) throw(runtime_error) = 0;
-    virtual ResultadoConta pesquisar(const Codigo&) throw(runtime_error) = 0;
-    virtual ResultadoConta voltar(const Codigo&) throw(runtime_error) = 0;
-};*/
+    virtual ResultadoBlog excluir(const Codigo&) throw(runtime_error) = 0;
+    virtual ResultadoBlog editar(const Blog&) throw(runtime_error) = 0;
+    virtual ResultadoBlog pesquisar(const Codigo&) throw(runtime_error) = 0;
+
+};
 
 
 #endif

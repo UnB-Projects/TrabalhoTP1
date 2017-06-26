@@ -39,3 +39,87 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const Email &email, const S
 
     return resultado;
 }
+
+
+// EXEMPLO
+// --------------------------------------------------------
+
+// Definições de método da classe stub da controladora da lógica de negócio de Blog.
+
+ResultadoBlog StubLNBlog::criar(const Blog &Blog) throw(runtime_error){
+
+    // Apresentar dados recebidos.
+
+    cout << endl << "StubLNBlog::criar" << endl ;
+
+    ResultadoBlog resultado;
+
+    // Diferentes comportamentos dependendo do código do Blog.
+
+    // Sucesso.
+
+    // Falha.
+
+    // Erro de sistema.
+
+    return resultado;
+}
+
+ResultadoBlog StubLNBlog::excluir(const Codigo &codigo) throw(runtime_error) {
+
+    // Apresentar dados recebidos.
+
+    cout << endl << "StubLNBlog::excluir" << endl ;
+
+    ResultadoBlog resultado;
+
+    // Diferentes comportamentos dependendo do código do Blog.
+
+    // Sucesso.
+
+    // Falha.
+
+    // Erro de sistema.
+
+    return resultado;
+}
+
+ResultadoBlog StubLNBlog::pesquisar(const Codigo &codigo) throw(runtime_error) {
+
+    // Apresentar dados recebidos.
+
+    cout << endl << "StubLNBlog::pesquisar" << endl ;
+
+    ResultadoBlog resultado;
+
+    // Diferentes comportamentos dependendo do código do Blog.
+
+    // Sucesso.
+
+    // Falha.
+
+    // Erro de sistema.
+
+    return resultado;
+}
+
+ResultadoBlog StubLNBlog::editar(const Blog &Blog) throw(runtime_error) {
+
+    // Apresentar dados recebidos.
+
+    cout << endl << "StubLNBlog::editar" << endl ;
+
+    ResultadoBlog resultado;
+
+    // Diferentes comportamentos dependendo do código do Blog.
+
+    // Sucesso.
+
+    // Falha.
+
+    // Erro de sistema.
+
+    return resultado;
+}
+
+
